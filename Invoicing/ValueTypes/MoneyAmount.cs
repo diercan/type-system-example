@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LanguageExt;
+using static LanguageExt.Prelude;
 
-namespace Invoicing.Nullable.ValueTypes
+namespace Invoicing.ValueTypes
 {
     public record MoneyAmount
     {
@@ -15,7 +12,7 @@ namespace Invoicing.Nullable.ValueTypes
             Value = value;
         }
 
-        public static MoneyAmount? Parse(decimal value) => new MoneyAmount(value);
+        public static Option<MoneyAmount> Parse(decimal value) => new MoneyAmount(value);
 
         public static readonly MoneyAmount Default = new MoneyAmount(0);
     }

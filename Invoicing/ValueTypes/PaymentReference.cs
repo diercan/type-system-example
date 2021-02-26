@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LanguageExt;
+using static LanguageExt.Prelude;
 
-namespace Invoicing.Nullable.ValueTypes
+namespace Invoicing.ValueTypes
 {
     public record PaymentReference
     {
@@ -15,7 +12,7 @@ namespace Invoicing.Nullable.ValueTypes
             Value = value;
         }
 
-        public static PaymentReference? Parse(string value)
+        public static Option<PaymentReference> Parse(string value)
         {
             if(value.Length>=6 && value.Length <= 8)
             {
@@ -23,7 +20,7 @@ namespace Invoicing.Nullable.ValueTypes
             }
             else
             {
-                return null;
+                return None;
             }
         }
 

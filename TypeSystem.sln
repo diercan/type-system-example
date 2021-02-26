@@ -7,9 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypeSystem", "TypeSystem\Ty
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invoicing", "Invoicing\Invoicing.csproj", "{39A29F94-6F35-4BF0-BE50-6C04C801417A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoicingClassic", "InvoicingClassic\InvoicingClassic.csproj", "{D7360D56-A9FB-40A9-A451-BE9753DB0DFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoicingClassic", "InvoicingClassic\InvoicingClassic.csproj", "{D7360D56-A9FB-40A9-A451-BE9753DB0DFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoicing.Nullable", "Invoicing.Nullable\Invoicing.Nullable.csproj", "{138D2AAF-BF17-4E5E-8DB6-4E2E92CC42FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Invoicing.Nullable", "Invoicing.Nullable\Invoicing.Nullable.csproj", "{138D2AAF-BF17-4E5E-8DB6-4E2E92CC42FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple", "Simple", "{9B0C9C2C-1C63-4479-8345-E2D5B6707037}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Problem", "Problem", "{A3D061DA-29B8-48D7-9E3E-50810340CED2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LanguageExt", "LanguageExt", "{593F3E03-7EF3-4673-A68A-692F71A666E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeSystem.LanguageExt", "TypeSystem.LanguageExt\TypeSystem.LanguageExt.csproj", "{505871C0-0071-456A-B65E-2AB7A3CC697B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +41,20 @@ Global
 		{138D2AAF-BF17-4E5E-8DB6-4E2E92CC42FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{138D2AAF-BF17-4E5E-8DB6-4E2E92CC42FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{138D2AAF-BF17-4E5E-8DB6-4E2E92CC42FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{505871C0-0071-456A-B65E-2AB7A3CC697B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{505871C0-0071-456A-B65E-2AB7A3CC697B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{505871C0-0071-456A-B65E-2AB7A3CC697B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{505871C0-0071-456A-B65E-2AB7A3CC697B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC64CED9-BE41-4B1B-8E87-7858C22EAB74} = {9B0C9C2C-1C63-4479-8345-E2D5B6707037}
+		{39A29F94-6F35-4BF0-BE50-6C04C801417A} = {593F3E03-7EF3-4673-A68A-692F71A666E8}
+		{D7360D56-A9FB-40A9-A451-BE9753DB0DFD} = {A3D061DA-29B8-48D7-9E3E-50810340CED2}
+		{138D2AAF-BF17-4E5E-8DB6-4E2E92CC42FE} = {9B0C9C2C-1C63-4479-8345-E2D5B6707037}
+		{505871C0-0071-456A-B65E-2AB7A3CC697B} = {593F3E03-7EF3-4673-A68A-692F71A666E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {85959F11-FDB5-48FD-AF10-5D375C37BFBD}

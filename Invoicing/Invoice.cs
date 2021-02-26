@@ -1,7 +1,7 @@
 ﻿using CSharp.Choices;
-using Invoicing.Nullable.ValueTypes;
+using Invoicing.ValueTypes;
 
-namespace Invoicing.Nullable
+namespace Invoicing
 {
     [AsChoice]
     public static partial class Invoice

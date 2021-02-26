@@ -1,9 +1,9 @@
 ﻿using LanguageExt;
 using static LanguageExt.Prelude;
 
-namespace Invoicing
+namespace Invoicing.ValueTypes
 {
-    public class InvoiceNumber
+    public record InvoiceNumber
     {
         public string Value { get;}
 
@@ -12,7 +12,7 @@ namespace Invoicing
             Value = number;
         }
 
-        public static Option<InvoiceNumber> Pare(string value)
+        public static Option<InvoiceNumber> Parse(string value)
         {
             if(!string.IsNullOrWhiteSpace(value) && value.Length == 8)
             {
@@ -23,5 +23,7 @@ namespace Invoicing
                 return None;
             }
         }
+
+        public static readonly InvoiceNumber Default = new InvoiceNumber("TM000000");
     }
 }

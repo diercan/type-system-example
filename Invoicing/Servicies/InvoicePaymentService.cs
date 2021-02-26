@@ -1,12 +1,12 @@
-﻿using Invoicing.Nullable.ValueTypes;
+﻿using Invoicing.ValueTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Invoicing.Nullable.Invoice;
+using static Invoicing.Invoice;
 
-namespace Invoicing.Nullable.Servicies
+namespace Invoicing.Servicies
 {
     public class InvoicePaymentService
     {

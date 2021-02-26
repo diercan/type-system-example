@@ -1,4 +1,4 @@
-﻿namespace Invoicing
+﻿namespace Invoicing.Nullable.ValueTypes
 {
     public record InvoiceNumber
     {

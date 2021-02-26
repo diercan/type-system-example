@@ -1,6 +1,6 @@
-﻿using Invoicing;
-using Invoicing.Nullable;
+﻿using Invoicing.Nullable;
 using Invoicing.Nullable.Servicies;
+using Invoicing.Nullable.ValueTypes;
 using System;
 using static Invoicing.Nullable.Invoice;
 
@@ -11,16 +11,24 @@ namespace TypeSystem
         static void Main(string[] args)
         {
             var number = InvoiceNumber.Parse("TM000001");
-            if (number != null)
+            var total = MoneyAmount.Parse(100);
+            if (number != null && total !=null)
             {
-                var inputInvoice = new InvoiceDto() { Number = number };
-                var unvalidatedInvoice = new UnvalidatedInvoice(inputInvoice);
-                var validatedInvoice = new InvoiceValidatorService().Validate(unvalidatedInvoice);
-                var sentInvoice = new InvoiceSenderService().SendInvoice(validatedInvoice);
-                var paidInvoice = new InvoicePaymentService().PayInvoice(sentInvoice);
+                InvoiceDto inputInvoice = new() { Number = number, Total = total };
+                IInvoice invoice = new UnvalidatedInvoice(inputInvoice);
+                invoice = new InvoiceValidatorService().Validate(invoice);
+                invoice = new InvoiceSenderService().Send(invoice);
+                invoice = new InvoicePaymentService().Pay(invoice);
+
+                var message = invoice.Match<string>(
+                    whenUnvalidatedInvoice: ui => "Invoice was not validated",
+                    whenInvalidInvoice: ii => $"Invalid invoice. Reason: {ii.Reason}",
+                    whenValidatedInvoice: vi => "Valid invoice",
+                    whenSentInvoice: si => "Sent invoice",
+                    whenPaidInvoice: pi => "Paid invoice");
+
+                Console.WriteLine(message);
             }
-            
-            Console.WriteLine("Hello World!");
         }
     }
 }

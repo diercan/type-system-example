@@ -1,9 +1,9 @@
 ﻿using LanguageExt;
 using static LanguageExt.Prelude;
 
-namespace Invoicing
+namespace Invoicing.ValueTypes
 {
-    public class Percentage
+    public record Percentage
     {
         public decimal Value { get; }
 
@@ -23,5 +23,7 @@ namespace Invoicing
                 return None;
             }
         }
+
+        public static readonly Percentage Default = new Percentage(0);
     }
 }
